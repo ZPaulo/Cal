@@ -2,22 +2,23 @@
 #include <string>
 #include <vector>
 
-using namespace std;
 
 
 
 class User{
 
 private:
-	string name;
-	vector <string> interests;
-	string local;
+	std::string name;
+	std::vector <std::string> interests;
+	std::vector <std::string> local;
 
 public:
 	User();
-	User(string name, string local, vector <string> interests);
-	vector<string> getInterests();
-	string getLocal();
+	User(std::string name);
+	User(std::string name, std::vector <std::string> local, std::vector <std::string> interests);
+
+	std::vector<std::string> getInterests();
+	std::string getLocal();
 
 };
 
