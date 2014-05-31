@@ -66,17 +66,11 @@ bool KMP(string SWord, string KWord)
 
 int main()
 {
-	string keyWord = "Traffic";
+	string lele;
+	Database lel;
 
-	
-
-
-	cout << "Found match: ";
-	if (KMP(s, keyWord))
-		cout << "true"<<endl;
-	else
-		cout << "false" <<endl ;
-
-	system("pause");
+	lel.initialize();
+	lel.matches();
+	cin >> lele;
 	return 0;
 }

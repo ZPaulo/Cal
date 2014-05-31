@@ -13,6 +13,8 @@ private:
 public:
 	Conference();
 	Conference(std::string name);
+	string getText();
+	string getName();
 	~Conference();
 };
 

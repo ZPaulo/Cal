@@ -58,3 +58,8 @@ vector<string> User::getLocal()
 {
 	return local;
 }
+
+string User:: getName()
+{
+	return name;
+}

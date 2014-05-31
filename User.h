@@ -23,6 +23,7 @@ public:
 
 	std::vector<std::string> getInterests();
 	vector <std::string> getLocal();
+	string getName();
 
 };
 

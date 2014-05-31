@@ -26,3 +26,13 @@ Conference::Conference(string name)
 	string s = out.str();
 	text = s;
 }
+
+string Conference:: getText()
+{
+	return text;
+}
+
+string Conference:: getName()
+{
+	return name;
+}
