@@ -1,11 +1,14 @@
 #include <string>
 #include <vector>
+#include <fstream>
+
+using namespace std;
 
 class Conference
 {
 private:
 	std::string name;
-	std::vector<std::string> text;
+	std::string text;
 public:
 	Conference();
 	Conference(std::string name);

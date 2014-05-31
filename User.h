@@ -1,6 +1,10 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <fstream>
+#include <sstream>
+
+using namespace std;
 
 
 
@@ -18,7 +22,7 @@ public:
 	User(std::string name, std::vector <std::string> local, std::vector <std::string> interests);
 
 	std::vector<std::string> getInterests();
-	std::string getLocal();
+	vector <std::string> getLocal();
 
 };
 

@@ -1,8 +1,4 @@
 #include "User.h"
-#include <fstream>
-#include <sstream>
-
-using namespace std;
 
 
 User::User(string name)
@@ -32,12 +28,12 @@ User::User(string name)
 		this->interests.push_back(interest);
 	}
 
-	istringstream ss(locals);
+	istringstream sss(locals);
 
-	while (ss)
+	while (sss)
 	{
 		string local;
-		if (!getline(ss, local, ',')) break;
+		if (!getline(sss, local, ',')) break;
 		this->local.push_back(local);
 	}
 
@@ -55,7 +51,7 @@ vector<string> User::getInterests()
 	return interests;
 }
 
-string User::getLocal()
+vector<string> User::getLocal()
 {
 	return local;
 }

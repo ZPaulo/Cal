@@ -1,7 +1,4 @@
 #include "Conference.h"
-#include <fstream>
-
-using namespace std;
 
 Conference::Conference()
 {
@@ -16,12 +13,12 @@ Conference::Conference(string name)
 {
 	ifstream conference;
 	conference.open(name + ".txt");
-	this->text = "";
-	string text;
+	text = "";
+	string textIn;
 
 	if (conference.is_open())
 	{
-		getline(conference, text);
-		this->text += text;
+		getline(conference, textIn);
+		text += textIn;
 	}
 }

@@ -26,7 +26,7 @@ void Database::initialize()
 
 	ifstream conferenceList;
 	userList.open("ConferenceList.txt");
-	string fileName;
+	
 
 	if (conferenceList.is_open())
 	while (!conferenceList.eof())
