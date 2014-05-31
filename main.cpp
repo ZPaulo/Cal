@@ -66,11 +66,13 @@ bool KMP(string SWord, string KWord)
 
 int main()
 {
-	string keyWord = "Feup";
-	string sentence = "Feup2";
+	string keyWord = "Traffic";
+
+	
+
 
 	cout << "Found match: ";
-	if (KMP(sentence, keyWord))
+	if (KMP(s, keyWord))
 		cout << "true"<<endl;
 	else
 		cout << "false" <<endl ;

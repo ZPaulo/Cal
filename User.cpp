@@ -5,8 +5,11 @@ User::User(string name)
 {
 	this->name = name;
 
+	string open = "users/" + name;
+	open += ".txt";
+
 	ifstream user;
-	user.open(name + ".txt");
+	user.open(open.c_str());
 	string locals;
 	string interests;
 
@@ -14,7 +17,7 @@ User::User(string name)
 	{
 		getline(user, interests);
 		getline(user, locals);
-		User *user;
+		//User *user; //que merda é esta, zé? explica-me quando vires isto, pfv - zoid
 	}
 
 	user.close();

@@ -11,14 +11,18 @@ Conference::~Conference()
 
 Conference::Conference(string name)
 {
+	this->name = name;
+	string open = "texts/" + name;
+	open += ".txt";
 	ifstream conference;
-	conference.open(name + ".txt");
+	conference.open(open.c_str());
 	text = "";
 	string textIn;
 
-	if (conference.is_open())
-	{
-		getline(conference, textIn);
-		text += textIn;
-	}
+	ostringstream out;
+
+	out << conference.rdbuf();
+
+	string s = out.str();
+	text = s;
 }
