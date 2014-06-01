@@ -1,2 +1,0 @@
-games,movies,football,basketball,series,cars,anime,manga
-porto,guimaraes,gaia,matosinhos,norte
