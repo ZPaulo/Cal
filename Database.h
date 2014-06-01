@@ -12,8 +12,8 @@ private:
 public:
 	Database();
 	~Database();
-	void initialize();
-	void matches();
+	void initialize();//cria os dados da classe
+	void matches();//verifica a percentagem de interesses de cada utilizador que estão em cada conferência
 
 	friend bool KMP(string SWord, string KWord);
 };

@@ -12,9 +12,9 @@ private:
 	std::string text;
 public:
 	Conference();
-	Conference(std::string name);
-	string getText();
-	string getName();
+	Conference(std::string name);//reads a conference from a txt file
+	string getText();//returns the text
+	string getName();//returns the name
 	~Conference();
 };
 

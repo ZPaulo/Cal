@@ -13,7 +13,7 @@ Conference::Conference(string name)
 {
 	this->name = name;
 	string open = "texts/" + name;
-	open += ".txt";
+	open += ".txt";//the complete file name
 	ifstream conference;
 	conference.open(open.c_str());
 	text = "";
@@ -21,9 +21,9 @@ Conference::Conference(string name)
 
 	ostringstream out;
 
-	out << conference.rdbuf();
+	out << conference.rdbuf();//inputs the whole file into a bufffer
 
-	string s = out.str();
+	string s = out.str();//inputs the whole file into a string
 	text = s;
 }
 

@@ -6,46 +6,45 @@ User::User(string name)
 	this->name = name;
 
 	string open = "users/" + name;
-	open += ".txt";
+	open += ".txt";//the user file
 
 	ifstream user;
 	user.open(open.c_str());
-	string locals;
+	string areas;
 	string interests;
 
 	if (user.is_open())
 	{
-		getline(user, interests);
-		getline(user, locals);
-		//User *user; //que merda é esta, zé? explica-me quando vires isto, pfv - zoid
+		getline(user, interests);//reads the user's interests
+		getline(user, areas);//reads the user's areas
 	}
 
 	user.close();
 
 	istringstream ss(interests);
 
-	while (ss)
+	while (ss)//splits interests 
 	{
 		string interest;
 		if (!getline(ss, interest, ',')) break;
 		this->interests.push_back(interest);
 	}
 
-	istringstream sss(locals);
+	istringstream sss(areas);
 
-	while (sss)
+	while (sss)//splits areas
 	{
-		string local;
-		if (!getline(sss, local, ',')) break;
-		this->local.push_back(local);
+		string area;
+		if (!getline(sss, area, ',')) break;
+		this->area.push_back(area);
 	}
 
 }
 
-User::User(string name, vector<string> local, vector <string> interests)
+User::User(string name, vector<string> area, vector <string> interests)
 {
 	this->name = name;
-	this->local = local;
+	this->area = area;
 	this->interests = interests;
 }
 
@@ -54,9 +53,9 @@ vector<string> User::getInterests()
 	return interests;
 }
 
-vector<string> User::getLocal()
+vector<string> User::getArea()
 {
-	return local;
+	return area;
 }
 
 string User:: getName()

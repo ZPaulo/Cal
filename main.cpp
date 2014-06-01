@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Database.h"
+#include <conio.h>
 
 using namespace std;
 
@@ -12,37 +13,40 @@ string convertToUpperCase (string Word){ //Function to do a case-insensitive sea
 }
 
 
-bool KMP(string SWord, string KWord)
+bool KMP(string sentence, string match)
 {
-	string S = convertToUpperCase(SWord);
-	string K = convertToUpperCase(KWord);
+	string S = convertToUpperCase(sentence);//converte a string para maiúsculas
+	string M = convertToUpperCase(match);
 
-	vector<int> T(K.size() + 1, -1);
+	vector<int> T(M.size() + 1, -1);
 	bool foundMatch = false;
 
-	if(K.size() == 0)
+	if(M.size() == 0)//string está vazia, devove falso
 	{
 		return foundMatch;
 	}
 
-	for(int i = 1; i <= K.size(); i++)
+	for(unsigned int i = 1; i <= M.size(); i++)//pre-procesasmento do padrão
 	{
-		int pos = T[i - 1];
-		while(pos != -1 && K[pos] != K[i - 1]) pos = T[pos];
+		int pos = T[i-1];
+		while(pos != -1 && M[pos] != M[i-1]) 
+			pos = T[pos];
 		T[i] = pos + 1;
 	}
 
 	int sp = 0;
 	int kp = 0;
 
-	while(sp < S.size())
+	while(sp < S.size())//processamento
 	{
-		while(kp != -1 && (kp == K.size() || K[kp] != S[sp])) kp = T[kp];
+		while(kp != -1 && (kp == M.size() || M[kp] != S[sp])) 
+			kp = T[kp];
 		kp++;
 		sp++;
-		if(kp == K.size()) foundMatch=true;
-		if (sp-(K.size()+1) <= 0){
-			if ((S[sp-(K.size()+1)] == ' ' || S[sp-(K.size()+1)] == '\0'))
+		if(kp == M.size()) 
+			foundMatch=true;
+		if (sp-(M.size()+1) <= 0){
+			if ((S[sp-(M.size()+1)] == ' ' || S[sp-(M.size()+1)] == '\0'))
 			{
 				if (foundMatch && (S[sp] < 'a' || S[sp] > 'z'))					
 					return foundMatch;
@@ -66,11 +70,12 @@ bool KMP(string SWord, string KWord)
 
 int main()
 {
-	string lele;
-	Database lel;
+	Database db;
 
-	lel.initialize();
-	lel.matches();
-	cin >> lele;
+	db.initialize();
+	db.matches();
+
+	cout << "Press any key to exit\n";
+	_getch();
 	return 0;
 }
