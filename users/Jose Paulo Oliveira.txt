@@ -1,2 +1,2 @@
-paintball,basketball,redbull,element,skate,games,movies,bicycles,environment, health, web, computing
+paintball,basketball,redbull,element,skate,games,movies,bicycles,environment, health, web, computing, research, digital, design
 Technologies, Simulation

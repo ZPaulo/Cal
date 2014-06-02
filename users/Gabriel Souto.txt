@@ -1,2 +1,2 @@
-krav maga,artes marciais,games,campo,btt, web, informatics, AI networks, grids
-Electronic,Engineering
+krav maga,artes marciais,games,campo,btt, web, informatics, AI networks, grids, Social, Mining
+electronic,engineering
